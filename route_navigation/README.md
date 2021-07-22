@@ -1,16 +1,34 @@
 # route_navigation
 
-A new Flutter project.
+  onPressed: () async {
+                  Get.to(
+                    Home(),
+                    //This Get.to() method have  attribute such as
 
-## Getting Started
+                    // makes second screen screen as Dialog
+                    fullscreenDialog: true,
 
-This project is a starting point for a Flutter application.
+                    //To Provide transition animation
+                    transition: Transition.zoom,
 
-A few resources to get you started if this is your first Flutter project:
+                    //Duration for Transition
+                    duration: Duration(milliseconds: 2000),
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+                    //Curve Animation
+                    curve: Curves.bounceInOut,
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+                    //Go to the next screen with some data
+                    arguments: "Data form main",
+                  );
+                  var data = await Get.to(Home());
+                  print("Received the data $data");
+                },
+                )}
+                
+                
+     #Getting back 
+       onPressed: () {
+                // Get.back();
+                //Send back to the previous screen must use result as name
+                Get.back(result: "This is form home screen");
+              },
