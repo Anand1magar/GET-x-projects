@@ -1,13 +1,18 @@
 # route_navigation
 
+
+
+
+
   onPressed: () async {
                   Get.to(
                     Home(),
+                    
                     //This Get.to() method have  attribute such as
-
                     // makes second screen screen as Dialog
+                    
                     fullscreenDialog: true,
-
+                    
                     //To Provide transition animation
                     transition: Transition.zoom,
 
