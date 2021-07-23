@@ -1,7 +1,9 @@
 # name_routing
 
-
+ Name Routing using Get x
+ 
  return GetMaterialApp(
+ 
       debugShowCheckedModeBanner: false,
       title: "Name Navigation",
       initialRoute: '/',
