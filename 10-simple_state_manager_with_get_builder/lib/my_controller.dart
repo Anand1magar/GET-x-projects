@@ -6,6 +6,6 @@ class MyController extends GetxController {
 
   void counter() {
     count++;
-    update(); //it will notify to all the widgets who  are using this count
+    update(); //it will notify to all the widgets who  are using this count || (Update the UI)
   }
 }
