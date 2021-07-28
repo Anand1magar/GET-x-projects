@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'my_controller.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      title: "GetX with controller",
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text("GetX with controller"),
+          ),
+          body: Center(
+            child: Center(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GetX<MyController>(
+                  init: MyController(),
+                  //It will initialize the MyController it means it  instance of MyController
+                  builder: (controller) {
+                    //builder will automaticly take instance of Mycontroller
+                    return Text("Number start  from ${controller.count}");
+                  },
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    //If the instance of the controller is not created on top we use this following:
+                    Get.find<MyController>().increment();
+                  },
+                  child: Text("Increment"),
+                ),
+              ],
+            )),
+          )),
+    );
+  }
+}
