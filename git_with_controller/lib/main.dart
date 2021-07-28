@@ -5,6 +5,10 @@ import 'my_controller.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  //If inti property is not used in GetX<Type of Controller> then
+//then create the instance of controller as follow:
+  // MyController my_controller = Get.put(MyController());
+  //NOTE: Get.put() for Dependency injection
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
