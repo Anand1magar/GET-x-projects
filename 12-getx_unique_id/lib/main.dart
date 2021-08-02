@@ -9,40 +9,39 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "GetX Unique Id",
+      title: 'GetX project',
       home: Scaffold(
         appBar: AppBar(
-          title: Text("GetX unique id"),
+          title: Text("unique Id"),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               GetBuilder<MyController>(
-                id: "txtCount",
+                  id: "text1",
+                  builder: (controller) {
+                    return Text(
+                      "The value is ${controller.count}",
+                      style: TextStyle(fontSize: 25),
+                    );
+                  }),
+              SizedBox(height: 18),
+              GetBuilder<MyController>(
+                id: "text2",
                 builder: (controller) {
                   return Text(
                     "The value is ${controller.count}",
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 25),
                   );
                 },
               ),
               SizedBox(height: 20),
-              GetBuilder<MyController>(
-                  id: "second Id",
-                  builder: (controller) {
-                    return Text(
-                      "The value is ${controller.count}",
-                      style: TextStyle(fontSize: 20),
-                    );
-                  }),
-              SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {
-                  myController.increment();
-                },
-                child: Text("Increment"),
-              ),
+                  onPressed: () {
+                    myController.increment();
+                  },
+                  child: Text("Increment text 1")),
             ],
           ),
         ),
